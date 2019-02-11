@@ -8,7 +8,11 @@ class Parser
     lines = File.readlines filename
     for line in lines
       arr = line.split(' ')
-      @webpages[arr[0]] = arr[1]
+      if @webpages.key?(arr[0])
+        @webpages[arr[0]] << arr[1]
+      else
+        @webpages[arr[0]] = [arr[1]]
+      end
     end
     @webpages
   end
