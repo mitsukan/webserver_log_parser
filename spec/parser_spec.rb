@@ -25,9 +25,14 @@ describe 'Parser' do
   end
 
   describe '.page_views' do
-    it 'Prints the pages and page views' do
+    it 'Returns a page and page views' do
       parser.parse('./spec/test.log')
-      expect(parser.page_views).to eq('/help_page/1 1 visits')
+      expect(parser.page_views).to eq('/help_page/1 1 visits ')
+    end
+
+    it 'Returns all the pages and views' do
+      parser.parse('./spec/test2.log')
+      expect(parser.page_views).to eq('/help_page/1 1 visits /contact 1 visits /home 1 visits /about/2 1 visits ')
     end
   end
 end

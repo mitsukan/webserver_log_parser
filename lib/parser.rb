@@ -21,7 +21,7 @@ class Parser
   def page_views
     string = ''
     for line in @webpages
-      string << line[0] +' '+ line[1].length.to_s + ' visits'
+      string << line[0] +' '+ line[1].length.to_s + ' visits '
     end
     string
   end
