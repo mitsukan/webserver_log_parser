@@ -29,7 +29,6 @@ class Parser
   def unique_views
     count = 0
     string = ''
-    # print @webpages
     for line in @webpages
       for visit in line[1].uniq
         count += 1
