@@ -7,9 +7,10 @@ class Parser
   def parse(filename)
     lines = File.readlines filename
     for line in lines
-      ip_address = line.scan(/\s.*\z/)[0]
-      page = line.sub(ip_address, '')
-      @webpages[page] = ip_address.strip
+      ip_address = line.scan(/\s.*$/)
+      print ip_address
+      page = line.sub(ip_address[0], '')
+      @webpages[page.strip] = ip_address[0].strip
     end
     @webpages
   end
