@@ -38,5 +38,4 @@ class Parser
     end
     string
   end
-
 end
