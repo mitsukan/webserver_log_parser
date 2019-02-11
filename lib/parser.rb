@@ -26,4 +26,18 @@ class Parser
     string
   end
 
+  def unique_views
+    count = 0
+    string = ''
+    # print @webpages
+    for page in @webpages
+      string << page[0]
+      for visit in page[1].uniq
+        count += 1
+      end
+    end
+    print string
+    string + ' ' + count.to_s + ' unique views '
+  end
+
 end
