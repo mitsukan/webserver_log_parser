@@ -47,6 +47,10 @@ describe 'Parser' do
       expect(parser.unique_views).to eq('/help_page/1 3 unique views ')
     end
 
+    it 'Can count the unique views for multiple pages' do
+      parser.parse('./spec/test4.log')
+      expect(parser.unique_views).to eq('/help_page/1 3 unique views /contact 4 unique views ')
+    end
   end
 
 end
