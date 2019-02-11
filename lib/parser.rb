@@ -1,3 +1,5 @@
+require 'pry'
+
 class Parser
   attr_reader :webpages
   def initialize
@@ -14,6 +16,14 @@ class Parser
         @webpages[arr[0]] = [arr[1]]
       end
     end
-    @webpages
   end
+
+  def page_views
+    string = ''
+    for line in @webpages
+      string << line[0] +' '+ line[1].length.to_s + ' visits'
+    end
+    string
+  end
+
 end

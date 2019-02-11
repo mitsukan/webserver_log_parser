@@ -23,4 +23,11 @@ describe 'Parser' do
       expect(parser.webpages).to eq({'/help_page/1' => ['126.318.035.038','184.123.665.067', '184.123.665.067', '444.701.448.104']})
     end
   end
+
+  describe '.page_views' do
+    it 'Prints the pages and page views' do
+      parser.parse('./spec/test.log')
+      expect(parser.page_views).to eq('/help_page/1 1 visits')
+    end
+  end
 end
